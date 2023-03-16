@@ -2,7 +2,9 @@
 // @route   GET /api/v1/bootcamps
 // @access  Public
 exports.getBootcamps = (req, res, next) => {
-  res.status(200).json({ success: true, msg: 'Show all bootcamps' });
+  res
+    .status(200)
+    .json({ success: true, msg: 'Show all bootcamps', hello: req.hello });
 };
 
 // @ desc   Get single bootcamps
@@ -36,3 +38,5 @@ exports.deleteBootcamp = (req, res, next) => {
     .status(200)
     .json({ success: true, msg: `Delete bootcamp ${req.params.id}` });
 };
+
+// Middleware is a function that has access to the request/response cycle
